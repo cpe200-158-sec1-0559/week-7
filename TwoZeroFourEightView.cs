@@ -12,6 +12,7 @@ namespace twozerofoureight
 {
     public partial class TwoZeroFourEightView : Form, View
     {
+        score scr;
         Model model;
         Controller controller;
        
@@ -23,6 +24,9 @@ namespace twozerofoureight
             controller = new TwoZeroFourEightController();
             controller.AddModel(model);
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
+            scr = new score(model);
+
+            
         }
 
         public void Notify(Model m)
@@ -116,6 +120,11 @@ namespace twozerofoureight
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TwoZeroFourEightView_Load(object sender, EventArgs e)
+        {
+            scr.Show();
         }
     }
 }
