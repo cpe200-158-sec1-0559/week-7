@@ -27,7 +27,7 @@ namespace twozerofoureight
 
         public void Notify(Model m)
         {
-            UpdateBoard(((TwoZeroFourEightModel) m).GetBoard());
+            UpdateBoard(((TwoZeroFourEightModel) m).GetBoard(),((TwoZeroFourEightModel) m).getlblScore());
         }
 
         private void UpdateTile(Label l, int i)
@@ -42,22 +42,27 @@ namespace twozerofoureight
             {
                 case 0:
                     l.BackColor = Color.Gray;
+                    label2.BackColor = Color.Yellow;
                     break;
                 case 2:
                     l.BackColor = Color.DarkGray;
+                    label2.BackColor = Color.Yellow;
                     break;
                 case 4:
                     l.BackColor = Color.Orange;
+                    label2.BackColor = Color.Yellow;
                     break;
                 case 8:
                     l.BackColor = Color.Red;
+                    label2.BackColor = Color.Yellow;
                     break;
                 default:
                     l.BackColor = Color.Green;
+                    label2.BackColor = Color.Yellow;
                     break;
             }
         }
-        private void UpdateBoard(int[,] board)
+        private void UpdateBoard(int[,] board,int lblscore)
         {
             UpdateTile(lbl00,board[0, 0]);
             UpdateTile(lbl01,board[0, 1]);
@@ -75,6 +80,7 @@ namespace twozerofoureight
             UpdateTile(lbl31,board[3, 1]);
             UpdateTile(lbl32,board[3, 2]);
             UpdateTile(lbl33,board[3, 3]);
+            UpdateTile(label2, lblscore);
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
@@ -97,5 +103,19 @@ namespace twozerofoureight
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

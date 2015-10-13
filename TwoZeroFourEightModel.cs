@@ -11,7 +11,12 @@ namespace twozerofoureight
         protected int boardSize; // default is 4
         protected int[,] board;
         protected Random rand;
+        protected int lblScore;
 
+        public int getlblScore()
+        {
+            return lblScore;
+        }
         public TwoZeroFourEightModel() : this(4)
         {
             // default board size is 4 
@@ -46,6 +51,7 @@ namespace twozerofoureight
                 if (board[x, y] == 0)
                 {
                     board[x, y] = 2;
+                    lblScore += 2;
                     break;
                 }
             }
@@ -82,6 +88,7 @@ namespace twozerofoureight
                     if (j > 0 && buffer[j] != 0 && buffer[j] == buffer[j - 1])
                     {
                         buffer[j - 1] *= 2;
+                        //lblScore += buffer[j - 1];
                         buffer[j] = 0;
                     }
                 }
@@ -134,6 +141,7 @@ namespace twozerofoureight
                     if (j > 0 && buffer[j] != 0 && buffer[j] == buffer[j - 1])
                     {
                         buffer[j - 1] *= 2;
+                        //lblScore += buffer[j - 1];
                         buffer[j] = 0;
                     }
                 }
@@ -188,6 +196,7 @@ namespace twozerofoureight
                     if (j > 0 && buffer[j] != 0 && buffer[j] == buffer[j - 1])
                     {
                         buffer[j - 1] *= 2;
+                        //lblScore += buffer[j - 1];
                         buffer[j] = 0;
                     }
                 }
@@ -239,6 +248,7 @@ namespace twozerofoureight
                     if (j > 0 && buffer[j] != 0 && buffer[j] == buffer[j - 1])
                     {
                         buffer[j - 1] *= 2;
+                        //lblScore += buffer[j - 1];
                         buffer[j] = 0;
                     }
                 }
